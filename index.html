@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>Resenje</title>
+        
+    </head>
+    <body>
+        <input id="myInput" type="text" onkeyup="myFunction()">
+        <ul id="myUL">
+            <li><a href="#">Adele</a></li>
+            <li><a href="#">Agnes</a></li>
+            <li><a href="#">Agitha</a></li>
+          
+            <li><a href="#">Billy</a></li>
+            <li><a href="#">Baba</a></li>
+            <li><a href="#">Baj</a></li>
+            <li><a href="#">Bob</a></li>
+            <li><a href="#">Calvin</a></li>
+            <li><a href="#">Christina</a></li>
+            <li><a href="#">Cindy</a></li>
+          </ul>
+        
+          <script>
+              function myFunction(){
+                var input,inputv,a,li,texta,ul;
+                ul = document.getElementById('myUL');
+                li = ul.getElementsByTagName('li');
+                
+                input = document.getElementById('myInput');
+                inputv = input.value.toUpperCase();
+               
+                for(let i=0;i<li.length;i++){
+                    a = li[i].getElementsByTagName('a')[0];
+                    texta = a.textContent || a.innerText;
+                    if(texta.toUpperCase().indexOf(inputv) === 0){
+                        li[i].style.display='';
+                    }else{
+                        li[i].style.display='none';
+                    }
+
+
+                }
+
+
+              }
+
+          </script>
+    </body>
+</html>
